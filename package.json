@@ -2,7 +2,7 @@
   "name": "homesafe",
   "version": "1.0.0",
   "description": "An alternative form of transportation aimed at university students.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/therealAJ/HomeSafe/issues"
   },
-  "homepage": "https://github.com/therealAJ/HomeSafe#readme"
+  "homepage": "https://github.com/therealAJ/HomeSafe#readme",
+  "dependencies": {
+    "bower": "^1.7.2",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  }
 }
