@@ -1,0 +1,91 @@
+.jumbotron {
+    height: 100vh;
+    background: url(http://everything-pr.com/wp-content/uploads/2015/01/jeff-ramson-new-york1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#login-box {
+    z-index: 1;
+
+    color: azure;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    padding-bottom: 300px;
+   
+}
+
+#home-safe {
+    font-size: 7em;
+        font-family: 'Damion', cursive;
+}
+
+#login-page {
+    color: white;
+  
+    
+}
+
+.login-text {
+    
+    font-size: 2em !important;
+    font-family: 'Damion', cursive;
+    
+}
+
+ /* label color */
+   .input-field label {
+     color: white;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+
+/* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: white;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+
+   /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: white;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+
+
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+       
