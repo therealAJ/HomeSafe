@@ -16,7 +16,8 @@
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    padding-bottom: 700px;
+    padding-bottom: 300px;
+   
 }
 
 #home-safe {
