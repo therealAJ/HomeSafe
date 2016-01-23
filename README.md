@@ -11,6 +11,8 @@ Alex's Log
 
 1/19/2016: completed server set up -- now able to run using npm
 
+1/21/2016: added login buttons
+
 
 
 Jason's Log
