@@ -8,6 +8,6 @@
 [![Git Stars](https://img.shields.io/github/stars/therealAJ/HomeSafe.svg)](https://github.com/therealAJ/HomeSafe)
 [![Version] (https://img.shields.io/badge/version-0.1.0-orange.svg)]()
 
-![alt tag](https://raw.githubusercontent.com/therealAJ/HomeSafe/master/public/app/img/readme.png)
+![alt tag](https://raw.githubusercontent.com/therealAJ/HomeSafe/master/public/img/readme.png)
 
 
