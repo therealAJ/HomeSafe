@@ -25,13 +25,14 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-    res.sendfile('./public/app/views/index.html');
+    res.sendfile('./public/views/index.html');
 })
+
 
 app.listen(config.port, function (err) {
     if (err) {
         console.log(err);
     } else {
-        console.log("Listening on port 8080")
+        console.log("Listening on port " + config.port);
     }
 });
