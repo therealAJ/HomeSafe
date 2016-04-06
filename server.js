@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+var api = require('./app/routes/api.js')(app, express);
+app.use('/api', api);
+
 
 app.use(express.static(__dirname + '/public'));
 
