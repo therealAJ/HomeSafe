@@ -6,6 +6,11 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
 
@@ -23,8 +28,18 @@
     <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>
 
-    <div id="main-box" class="jumbotron">
+    <nav class="blue-grey darken-1">
+        <div class="nav-wrapper">
+            <a id="nav-icon" class="brand-logo"> <i class="fa fa-lg fa-car "></i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
 
+                <li><a class="nav-text" href="">Login</a></li>
+                <li><a class="nav-text" href="">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main-box" class="jumbotron">
         <div id="login-box" class="container center">
             <h1 id="home-safe"> HomeSafe </h1>
             <div id="login-page" class="container">
@@ -33,7 +48,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate login-text">
-                                <label for="email" data-error="wrong" data-success="right" class="login-text">Email</label>
+                                <label for="email" class="login-text">Email</label>
                             </div>
                         </div>
                     </form>
@@ -41,7 +56,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="password" type="password" class="validate login-text">
-                                <label class="login-text" for="password" data-error="wrong" data-success="right">Password</label>
+                                <label class="login-text" for="password">Password</label>
                             </div>
                         </div>
                     </form>
@@ -49,7 +64,7 @@
 
                 <a href="" id="login-button" class="waves-effect waves-light btn-large black homepage-buttons"> LOGIN </a>
                 <br/>
-                <a href="" id="signup-button" class="waves-effect waves-light btn-large black homepage-buttons"> REGISTER </a>
+                <a href="./views/partials/signup.html" id="signup-button" class="waves-effect waves-light btn-large black homepage-buttons"> REGISTER </a>
 
             </div>
         </div>

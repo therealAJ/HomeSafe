@@ -16,6 +16,16 @@ html {
     position: fixed;
 }
 
+#nav-icon {
+    position: relative;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+.nav-text {
+    font-size: 1.2em;
+}
+
 .jumbotron {
     height: 100%;
     background: url(http://everything-pr.com/wp-content/uploads/2015/01/jeff-ramson-new-york1.jpg) no-repeat center center fixed;
@@ -42,8 +52,8 @@ html {
 }
 
 .login-text {
-    font-size: 2em !important;
-    font-family: 'Damion', cursive;
+    font-size: 1.6em !important;
+    font-family: sans-serif;
 }
 
 .homepage-buttons {
