@@ -32,6 +32,22 @@ module.exports = function (app, express) {
 
         });
     });
+    
+    api.get('/users', function(req, res) {
+     
+            User.find({}, function(err, users){
+                if(err)  {
+                    res.send(err); 
+                    return; 
+                }
+                res.json(users); 
+            })
+            
+    })
+    
+    
+    
+    
 
     return api; 
 }
