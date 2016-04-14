@@ -97,7 +97,7 @@ module.exports = function (app, express) {
     });
     
     
-    app.use(function(req,res, next){
+    api.use(function(req,res, next){
         
         console.log("Somebody just came to our app!"); 
         
@@ -121,6 +121,15 @@ module.exports = function (app, express) {
         } else {
             res.status(403).send({ sucess: false, message: "No Token Provided"});
         }
+    });
+    
+    
+    // to pass the middleware you must provide a legitimate token ... DESTINATION B
+    
+    api.get('/', function(req, res){
+        
+        res.json("Hello from the other side!");
+         
     });
     
     
