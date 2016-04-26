@@ -11,7 +11,8 @@ var UserSchema = new Schema({
     email: { type: String, trim: true, required: 'Email address is required', index: { unique: true }, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']},
     username: { type: String, required: 'Username is required', index: { unique: true }},
     password: { type: String, required: 'Password is required', select: false}, 
-    phone_number: { type: String, required: 'Phone number is required', index: { unique: true }}
+    phone_number: { type: String, required: 'Phone number is required', index: { unique: true }}, 
+    address: { type: String, required: 'Home Address is required', index: { unique: true}}
     
 });
 
