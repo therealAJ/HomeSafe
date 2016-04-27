@@ -13,7 +13,8 @@ var UserSchema = new Schema({
     password: { type: String, required: 'Password is required', select: false}, 
     phone_number: { type: String, required: 'Phone number is required'}, 
     address: { type: String, required: 'Home Address is required'},
-    age: { type: Number, required: 'Age is required'}
+    age: { type: Number, required: 'Age is required'},
+    isActivated: { type: Boolean, default: false }
 });
 
 
@@ -32,6 +33,13 @@ UserSchema.pre('save', function(next) {
             next(); 
         }
     });
+});
+
+UserSchema.post('save', function(next) {
+    var user = this;
+
+    //send verification email
+    
 });
 
 UserSchema.methods.comparePassword = function(password) {
