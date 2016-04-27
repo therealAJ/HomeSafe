@@ -33,7 +33,9 @@ module.exports = function (app, express) {
             email: req.body.email,
             username: req.body.username,
             password: req.body.password,
-            phone_number: req.body.phone_number
+            phone_number: req.body.phone_number,
+            address: req.body.address,
+            age: req.body.age
 
         })
 
