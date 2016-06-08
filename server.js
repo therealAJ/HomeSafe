@@ -15,22 +15,18 @@ mongoose.connect(config.database, function (err) {
     }
 })
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 var api = require('./app/routes/api.js')(app, express);
+
 app.use('/api', api);
-
-
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
     res.sendfile('./public/views/index.html');
 })
-
 
 app.listen(config.port, function (err) {
     if (err) {

@@ -19,7 +19,6 @@ function createToken(user) {
 
 module.exports = function (app, express) {
 
-
     var api = express.Router();
     
     //SIGNUP API
@@ -40,21 +39,18 @@ module.exports = function (app, express) {
         })
 
         user.save(function (err) {
-
             if (err) {
                 res.send(err);
                 return;
             }
-            
             res.json({ message: 'User has benn created!'});
-
         });
     });
     
     // GET ALL USERS API
     
     api.get('/users', function(req, res) {
-     
+        
             User.find({}, function(err, users){
                 if(err)  {
                     res.send(err); 
@@ -125,7 +121,6 @@ module.exports = function (app, express) {
         }
     });
     
-    
     // to pass the middleware you must provide a legitimate token ... DESTINATION B
     
     api.get('/', function(req, res){
@@ -133,7 +128,6 @@ module.exports = function (app, express) {
         res.json("Hello from the other side!");
          
     });
-    
     
     return api; 
     
