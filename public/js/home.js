@@ -3,11 +3,46 @@
  function initMap() {
      map = new google.maps.Map(document.getElementById('map'), {
          center: {
-             lat: 49.265,
-             lng: -123.245
+             lat: 49.263,
+             lng: -123.249
          },
          zoom: 15
      });
+
+
+     // Get user location and place marker on map, open infowindow
+
+     var currentPosition = new google.maps.Marker({
+         map: map,
+     });
+     var currentPositionInfoWindow = new google.maps.InfoWindow(); 
+
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
+             var pos = {
+                 lat: position.coords.latitude,
+                 lng: position.coords.longitude
+             };
+
+             currentPosition.setPosition(pos);
+             currentPosition.setTitle('Location found.');
+             map.setCenter(pos);
+
+             google.maps.event.addListener(currentPosition, 'click', (function (marker) {
+                 return function () {
+                     currentPositionInfoWindow.setContent("You are here");
+                     currentPositionInfoWindow.setPosition(pos);
+                     currentPositionInfoWindow.open(map, currentPosition);
+                 }
+             })(marker));
+
+         }, function () {
+             handleLocationError(true, currentPosition, map.getCenter());
+         });
+     } else {
+         // Browser doesn't support Geolocation
+         handleLocationError(false, currentPosition, map.getCenter());
+     }
 
 
      var locations = [
