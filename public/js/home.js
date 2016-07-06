@@ -43,8 +43,6 @@
          handleLocationError(false, currentPosition, map.getCenter());
      }
 
-
-
      var locations = [
       ['Safe Walk via UBC Village', 49.266316, -123.24361, 1],
       ['Safe Walk via Walter Gage Residence', 49.27, -123.25, 2],
@@ -73,48 +71,31 @@
          })(marker, i));
      }
 
-
      var shortestPaths = []
-     var ionaLatLong = new google.maps.LatLng(49.2704778, -123.2525351);
-     
-     // TODO: Figure out how to get current position's LatLng into global var
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(function (position) {
-//             var pos = {
-//                 lat: position.coords.latitude,
-//                 lng: position.coords.longitude
-//             };
-//
-//             ionaLatLong = pos;
-//
-//         }, function () {
-//             handleLocationError(true, currentPosition, map.getCenter());
-//         });
-//     } else {
-//         // Browser doesn't support Geolocation
-//         handleLocationError(false, currentPosition, map.getCenter());
-//     }
+     var ionaLatLong;
 
+     navigator.geolocation.getCurrentPosition(function (p) {
+         
+         ionaLatLong = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
 
-     for (i = 0; i < locations.length; i++) {
-         var latLngA = new google.maps.LatLng(locations[i][1], locations[i][2]);
-         var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(latLngA, ionaLatLong) / 1000) * 100) / 100;
-
-         shortestPaths[i] = distance;
-     }
-
-     var rows = 7,
-         cols = 2;
-
-     for (var i = 0; i < rows; i++) {
-         $('table').append('<tr></tr>');
-         for (var j = 0; j < cols; j++) {
-             $('table').find('tr').eq(i).append('<td></td>');
-             $('table').find('tr').eq(i).find('td').eq(j).attr('data-row', i).attr('data-col', j);
-             $('table').find('tr').eq(i).find('td').eq(0).text(locations[i][0]);
-             $('table').find('tr').eq(i).find('td').eq(1).text(shortestPaths[i] + " km");
-             //locations[i][1]
+         for (i = 0; i < locations.length; i++) {
+             var latLngA = new google.maps.LatLng(locations[i][1], locations[i][2]);
+             var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(latLngA, ionaLatLong) / 1000) * 10) / 10;
+             shortestPaths[i] = distance;
          }
-     }
 
+         var rows = 7,
+             cols = 2;
+
+         for (var i = 0; i < rows; i++) {
+             $('table').append('<tr></tr>');
+             for (var j = 0; j < cols; j++) {
+                 $('table').find('tr').eq(i).append('<td></td>');
+                 $('table').find('tr').eq(i).find('td').eq(j).attr('data-row', i).attr('data-col', j);
+                 $('table').find('tr').eq(i).find('td').eq(0).text(locations[i][0]);
+                 $('table').find('tr').eq(i).find('td').eq(1).text(shortestPaths[i] + " km");
+                 //locations[i][1]
+             }
+         }
+     });
  }
