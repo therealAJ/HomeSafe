@@ -1,6 +1,17 @@
  var map;
 
+ var locations = [
+      ['Safe Walk via UBC Village', 49.266316, -123.24361, 1],
+      ['Safe Walk via Walter Gage Residence', 49.27, -123.25, 2],
+      ['Safe Walk via Irving Library', 49.267581, -123.252321, 3],
+      ['Safe Walk via Save On Foods', 49.254, -123.24, 4],
+      ['Safe Walk via Wreck Beach', 49.262, -123.2581, 5],
+      ['Safe Walk via Thunderbird Stadium', 49.2554, -123.246, 6],
+      ['Safe Walk via Museum of Anthropology', 49.2683, -123.259095, 7]
+    ];
+
  function initMap() {
+
      map = new google.maps.Map(document.getElementById('map'), {
          center: {
              lat: 49.263,
@@ -43,18 +54,23 @@
          handleLocationError(false, currentPosition, map.getCenter());
      }
 
-     var locations = [
-      ['Safe Walk via UBC Village', 49.266316, -123.24361, 1],
-      ['Safe Walk via Walter Gage Residence', 49.27, -123.25, 2],
-      ['Safe Walk via Irving Library', 49.267581, -123.252321, 3],
-      ['Safe Walk via Save On Foods', 49.254, -123.24, 4],
-      ['Safe Walk via Wreck Beach', 49.262, -123.2581, 5],
-      ['Safe Walk via Thunderbird Stadium', 49.2554, -123.246, 6],
-      ['Safe Walk via Museum of Anthropology', 49.2683, -123.259095, 7]
-    ];
+
+
+     // store current location
+
+     // Create second drop down of locations
+
+     var items = [];
+     $.each(locations, function (i) {
+         items.push('<li><a onclick="storeEndLocation()">' + locations[i][0] + '</a></li>');
+     }); // close each()
+     $('#dropdown2').append(items.join(''));
+
+
+
+     // Create markers and infowindows of SafeWalk Locations 
 
      var infowindow = new google.maps.InfoWindow();
-
      var marker, i;
 
      for (i = 0; i < locations.length; i++) {
@@ -75,7 +91,7 @@
      var ionaLatLong;
 
      navigator.geolocation.getCurrentPosition(function (p) {
-         
+
          ionaLatLong = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
 
          for (i = 0; i < locations.length; i++) {
@@ -93,9 +109,25 @@
                  $('table').find('tr').eq(i).append('<td></td>');
                  $('table').find('tr').eq(i).find('td').eq(j).attr('data-row', i).attr('data-col', j);
                  $('table').find('tr').eq(i).find('td').eq(0).text(locations[i][0]);
-                 $('table').find('tr').eq(i).find('td').eq(1).text(shortestPaths[i] + " km");
-                 //locations[i][1]
+                 $('table').find('tr').eq(i).find('td').eq(1).text(shortestPaths[i] + " km away");
+
              }
          }
+
      });
+ }
+
+ var currentPosition;
+
+ function storeEndLocation() {
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
+             var pos = {
+                 lat: position.coords.latitude,
+                 lng: position.coords.longitude
+             };
+             currentPosition = pos;
+             console.log(currentPosition);
+         });
+     }
  }

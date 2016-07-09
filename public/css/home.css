@@ -24,6 +24,11 @@ body {
     height: 50%;
 }
 
+#dropdown2 {
+    width: 160px !important;
+    height: 400px !important;
+}
+
 #map {
     right: ;
     height: 93vh;
