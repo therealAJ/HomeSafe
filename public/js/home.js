@@ -10,6 +10,11 @@
       ['Safe Walk via Museum of Anthropology', 49.2683, -123.259095, 7]
     ];
 
+
+ var currentPositionLatLng;
+ var endPositionLatLng; 
+ var endPosition;
+
  function initMap() {
 
      map = new google.maps.Map(document.getElementById('map'), {
@@ -62,9 +67,15 @@
 
      var items = [];
      $.each(locations, function (i) {
-         items.push('<li><a onclick="storeEndLocation()">' + locations[i][0] + '</a></li>');
+         items.push('<li class="location-li"><a>'  + locations[i][0] + '</a></li>');
      }); // close each()
      $('#dropdown2').append(items.join(''));
+     
+     $(".location-li").click(function () {
+         var text = $(this).text();
+         endPosition = text;
+         $('#destination').text(endPosition);
+     });
 
 
 
@@ -117,17 +128,31 @@
      });
  }
 
- var currentPosition;
-
- function storeEndLocation() {
+ 
+ function storeStartLocation() {
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function (position) {
              var pos = {
                  lat: position.coords.latitude,
                  lng: position.coords.longitude
              };
-             currentPosition = pos;
-             console.log(currentPosition);
+             currentPositionLatLng = pos;
+             console.log(currentPositionLatLng);
          });
      }
+ }
+
+
+
+ function calculateLocation() {
+     for(var i = 0; i < locations.length; i++) {
+         if(endPosition == locations[i][0]) {
+             var pos = {
+                 lat: locations[i][1],
+                 lng: locations[i][2]
+             };
+             endPositionLatLng = pos;
+         }   
+     }
+     console.log(endPositionLatLng);
  }

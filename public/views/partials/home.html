@@ -44,9 +44,12 @@
     <div id="main-content" class="row">
 
         <div id="sidebar-container" class="col s4 m4 l4">
+           
             <div id="bus-container">
                 <h5 class="center">Get me home safe!</h5>
-
+                
+                <!-- TABS-->
+                
                 <div class="row">
                     <div class="col s6 center">
                         <!--from drop-down-->
@@ -63,10 +66,23 @@
                         </ul>
                     </div>
                 </div>
-
-
-
+                
+                <!-- DESTINATION -->
+                <div>
+                    <div class="row center">
+                       <h6 class="center"> Destination </h6>
+                        <div id="destination" class="input-field col s12 center">
+                        </div>
+                        <br><br><br>
+                         <a class="waves-effect waves-light btn " onclick="calculateLocation()">Calculate</a>
+                    </div>
+                </div>
+                
+               
+                
+                
             </div>
+            
             <div id="safe-walk-container">
                 <h5 class="center">Safe Walk Locations </h5>
                 <table id="data_table">
