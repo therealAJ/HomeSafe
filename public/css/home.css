@@ -33,3 +33,15 @@ body {
     right: ;
     height: 93vh;
 }
+
+#container-1-headline {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.default-text {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#destination-header {
+    font-size: 18px;
+}

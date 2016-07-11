@@ -12,8 +12,11 @@
 
 
  var currentPositionLatLng;
- var endPositionLatLng; 
+ var endPositionLatLng;
  var endPosition;
+
+
+
 
  function initMap() {
 
@@ -67,10 +70,10 @@
 
      var items = [];
      $.each(locations, function (i) {
-         items.push('<li class="location-li"><a>'  + locations[i][0] + '</a></li>');
+         items.push('<li class="location-li"><a>' + locations[i][0] + '</a></li>');
      }); // close each()
      $('#dropdown2').append(items.join(''));
-     
+
      $(".location-li").click(function () {
          var text = $(this).text();
          endPosition = text;
@@ -128,31 +131,54 @@
      });
  }
 
- 
+
  function storeStartLocation() {
+
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function (position) {
-             var pos = {
-                 lat: position.coords.latitude,
-                 lng: position.coords.longitude
-             };
-             currentPositionLatLng = pos;
+
+             currentPositionLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
              console.log(currentPositionLatLng);
+
          });
      }
+     
  }
 
 
 
  function calculateLocation() {
-     for(var i = 0; i < locations.length; i++) {
-         if(endPosition == locations[i][0]) {
-             var pos = {
-                 lat: locations[i][1],
-                 lng: locations[i][2]
-             };
-             endPositionLatLng = pos;
-         }   
+     
+     $(directionsPanel).empty();
+      
+     for (var i = 0; i < locations.length; i++) {
+         if (endPosition == locations[i][0]) {
+
+             endPositionLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
+         }
      }
-     console.log(endPositionLatLng);
+
+     var directionsDisplay;
+     var directionsService = new google.maps.DirectionsService();
+
+     directionsDisplay = new google.maps.DirectionsRenderer();
+     directionsDisplay.setMap(map);
+     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+
+     (function calcRoute() {
+         var request = {
+             origin: currentPositionLatLng,
+             destination: endPositionLatLng,
+             travelMode: google.maps.TravelMode.WALKING
+         };
+         directionsService.route(request, function (response, status) {
+             if (status == google.maps.DirectionsStatus.OK) {
+                 directionsDisplay.setDirections(response);
+             }
+         });
+     }());
+
+     $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
+
  }
