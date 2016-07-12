@@ -33,7 +33,7 @@
 
      // Get user location and place marker on map, open infowindow
 
-    currentPosition = new google.maps.Marker({
+     currentPosition = new google.maps.Marker({
          map: map,
      });
 
@@ -48,6 +48,11 @@
 
              currentPosition.setPosition(pos);
              currentPosition.setTitle('Location found.');
+
+             currentPositionInfoWindow.open(map, currentPosition);
+             currentPositionInfoWindow.setContent("You are here");
+
+
              map.setCenter(pos);
 
              google.maps.event.addListener(currentPosition, 'click', (function (marker) {
@@ -147,9 +152,9 @@
 
          });
      }
-     
+
      // Open Current Location Marker
-     
+
      currentPositionInfoWindow.open(map, currentPosition);
      currentPositionInfoWindow.setContent("You are here");
 
