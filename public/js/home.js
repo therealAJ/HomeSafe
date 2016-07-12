@@ -15,7 +15,10 @@
  var endPositionLatLng;
  var endPosition;
 
+ var directionsDisplay;
 
+ var currentPosition;
+ var currentPositionInfoWindow;
 
 
  function initMap() {
@@ -30,10 +33,11 @@
 
      // Get user location and place marker on map, open infowindow
 
-     var currentPosition = new google.maps.Marker({
+    currentPosition = new google.maps.Marker({
          map: map,
      });
-     var currentPositionInfoWindow = new google.maps.InfoWindow();
+
+     currentPositionInfoWindow = new google.maps.InfoWindow();
 
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function (position) {
@@ -144,14 +148,17 @@
          });
      }
      
+     // Open Current Location Marker
+     
+     currentPositionInfoWindow.open(map, currentPosition);
+     currentPositionInfoWindow.setContent("You are here");
+
  }
 
 
 
  function calculateLocation() {
-     
-     $(directionsPanel).empty();
-      
+
      for (var i = 0; i < locations.length; i++) {
          if (endPosition == locations[i][0]) {
 
@@ -159,7 +166,6 @@
          }
      }
 
-     var directionsDisplay;
      var directionsService = new google.maps.DirectionsService();
 
      directionsDisplay = new google.maps.DirectionsRenderer();
@@ -180,5 +186,10 @@
      }());
 
      $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
+ }
 
+ function resetDirectionRender() {
+     $(directionsPanel).empty();
+     directionsDisplay.setMap(null);
+     $('#directions-below').empty();
  }
