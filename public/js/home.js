@@ -34,7 +34,7 @@
      // Get user location and place marker on map, open infowindow
 
      currentPosition = new google.maps.Marker({
-         map: map,
+         map: map
      });
 
      currentPositionInfoWindow = new google.maps.InfoWindow();

@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
     res.sendfile('./app/views/index.html');
 });
 
-app.listen(config.port, function (err) {
+var port = 3000 || process.env.PORT;
+app.listen(process.ENV, function (err) {
     if (err) {
         console.log(err);
     } else {
