@@ -1,33 +1,33 @@
  var map;
 
  var locations = [
-      ['HUB 1 - Totem Park Residence @ Commonsblock', 49.25804, -123.25305, 1]
-      ['HUB 2 - Marine Drive Residence @ Point Grill', 49.26173, -123.25516, 2]
-      ['HUB 3 - Maple House Ponderosa @ Residence Lobby', 49.26343, -123.25571, 3]
-      ['HUB 4 - Place Vanier Residence @ Commonsblock', 49.26473, -123.25867, 4]
-      ['HUB 5 - 2700 Fairview Cres @ Bus Stop', 49.26242, -123.23909, 5]
-      ['HUB 6 - Fairview Cres @ Beanery Coffee House', 49.26363, -123.23945, 6]
-      ['HUB 7 - Acadia Park @ Commonsblock', 49.2627, -123.23737, 7]
-      ['HUB 8 - Gage Residence @ Commonsblock', 49.2695, -123.24967, 8]
-      ['HUB 9 - Green College @ Admin Building', 49.27117, -123.25651, 9]
-      ['HUB 10  - St John\'s College', 49.26298, -123.25622, 10]
-      ['HUB 11 - Ritsumeikan Residence', 49.26031, -123.2531, 11]
-      ['HUB 12 - Thunderbird Residence @ Commonsblock', 49.25888, -123.24984, 12]
-      ['HUB 13 - Koerner House @ Front Entrance', 49.26816, -123.25779, 13]
-      ['HUB 14 - SUB @ North Entrance ', 49.2677, -123.25051, 14]
-      ['HUB 15 - Electric Bus Loop @ #14 Bus Shelter', 49.2658, -123.24813, 15]
-      ['HUB 16 - Bus Loop @ SRC Back Door', 49.26841, -123.24848, 16]
-      ['HUB 17 - Fraser Hall @ Front Entrance ', 49.2615, -123.24083, 17]
-      ['HUB 18 - Pan-Hellenic House @ Front Entrance', 49.26007, -123.23962, 18]
-      ['HUB 19 - MBA House @ Front Entrance', 49.25394, -123.23497, 19]
-      ['HUB 20 - Life Science @ Front Atrium', 49.2623, -123.24453, 20]
-      ['HUB 21 - UBC Hospital', 49.26405, -123.24533, 21]
-      ['HUB 22 - Forestry Bldg @ Agronomy Rd Entrance', 49.26057, -123.24884, 22]
-      ['HUB 23 - UBC Bookstore @ Campus Security', 49.26496, -123.25017, 23]
-      ['HUB 24 - Flag Pole Plaza @ Parking Shelter', 49.26892, -123.25615, 24]
-      ['HUB 25 - Koerner Library @ Front Entrance', 49.26667, -123.25503, 25]
-      ['HUB 26 - IKB Entrance', 49.26767, -123.25236, 26]
-      ['HUB 27 - Allard Hall @ Front Entrance', 49.26944, -123.2533, 27]
+      ['HUB 1 - Totem Park Residence @ Commonsblock', 49.25804, -123.25305, 1],
+      ['HUB 2 - Marine Drive Residence @ Point Grill', 49.26173, -123.25516, 2],
+      ['HUB 3 - Maple House Ponderosa @ Residence Lobby', 49.26343, -123.25571, 3],
+      ['HUB 4 - Place Vanier Residence @ Commonsblock', 49.26473, -123.25867, 4],
+      ['HUB 5 - 2700 Fairview Cres @ Bus Stop', 49.26242, -123.23909, 5],
+      ['HUB 6 - Fairview Cres @ Beanery Coffee House', 49.26363, -123.23945, 6],
+      ['HUB 7 - Acadia Park @ Commonsblock', 49.2627, -123.23737, 7],
+      ['HUB 8 - Gage Residence @ Commonsblock', 49.2695, -123.24967, 8],
+      ['HUB 9 - Green College @ Admin Building', 49.27117, -123.25651, 9],
+      ['HUB 10  - St John\'s College', 49.26298, -123.25622, 10],
+      ['HUB 11 - Ritsumeikan Residence', 49.26031, -123.2531, 11],
+      ['HUB 12 - Thunderbird Residence @ Commonsblock', 49.25888, -123.24984, 12],
+      ['HUB 13 - Koerner House @ Front Entrance', 49.26816, -123.25779, 13],
+      ['HUB 14 - SUB @ North Entrance ', 49.2677, -123.25051, 14],
+      ['HUB 15 - Electric Bus Loop @ #14 Bus Shelter', 49.2658, -123.24813, 15],
+      ['HUB 16 - Bus Loop @ SRC Back Door', 49.26841, -123.24848, 16],
+      ['HUB 17 - Fraser Hall @ Front Entrance ', 49.2615, -123.24083, 17],
+      ['HUB 18 - Pan-Hellenic House @ Front Entrance', 49.26007, -123.23962, 18],
+      ['HUB 19 - MBA House @ Front Entrance', 49.25394, -123.23497, 19],
+      ['HUB 20 - Life Science @ Front Atrium', 49.2623, -123.24453, 20],
+      ['HUB 21 - UBC Hospital', 49.26405, -123.24533, 21],
+      ['HUB 22 - Forestry Bldg @ Agronomy Rd Entrance', 49.26057, -123.24884, 22],
+      ['HUB 23 - UBC Bookstore @ Campus Security', 49.26496, -123.25017, 23],
+      ['HUB 24 - Flag Pole Plaza @ Parking Shelter', 49.26892, -123.25615, 24],
+      ['HUB 25 - Koerner Library @ Front Entrance', 49.26667, -123.25503, 25],
+      ['HUB 26 - IKB Entrance', 49.26767, -123.25236, 26],
+      ['HUB 27 - Allard Hall @ Front Entrance', 49.26944, -123.2533, 27],
       ['HUB 28 - VST @ Iona Drive', 49.27122, -123.25051, 28]
     ];
 
