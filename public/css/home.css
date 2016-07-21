@@ -8,7 +8,7 @@ body {
     color: #545454;
 }
 
-#data-table {
+#data_table {
     overflow-y: scroll;
     display: block;
     height: inherit;
