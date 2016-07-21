@@ -42,7 +42,7 @@
  var currentPositionInfoWindow;
  
  //JS Event Handlers
- $('#dropdown2').on('touchstart click', function(){ 
+ $('#dropdown2 > li').on('touchstart click', function(){ 
     calculateLocation();
  });
 
@@ -95,11 +95,6 @@
          // Browser doesn't support Geolocation
          handleLocationError(false, currentPosition, map.getCenter());
      }
-
-
-
-
-
 
      // Create markers and infowindows of SafeWalk Locations 
 
