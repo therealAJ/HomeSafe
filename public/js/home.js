@@ -192,6 +192,7 @@
 
 
  function calculateLocation() {
+     storeStartLocation();
 
      for (var i = 0; i < locations.length; i++) {
          if (endPosition == locations[i][0]) {
