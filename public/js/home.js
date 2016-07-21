@@ -210,13 +210,11 @@
                    var totalDistance = computeTotalDistance(directionsDisplay.getDirections());
        		   var totalDuration = formatTime(computeTotalDuration(directionsDisplay.getDirections()));
 
-       		   $('#directionsHeader').append("<div class='row'> <h5 class='col s12'>"+ totalDuration +" ("+ totalDistance + " km) </h5> <p class='col s9' id='endPosition'><span id='longDescription'>Click here for directions to</span> <span id='shortDescription'>Directions to</span> <b>" + endPosition + "</b> </p> <div class='col s3' id='walking-icon-wrapper'><img id='walking-icon-img' src='/img/walking-icon.png' style='width:inherit'></div> </div>");
+       		   $('#directionsHeader').html("<div class='row'> <h5 class='col s12'>"+ totalDuration +" ("+ totalDistance + " km) </h5> <p class='col s9' id='endPosition'><span id='longDescription'>Click here for directions t/o</span> <span id='shortDescription'>Directions to</span> <b>" + endPosition + "</b> </p> <div class='col s3' id='walking-icon-wrapper'><img id='walking-icon-img' src='/img/walking-icon.png' style='width:inherit'></div> </div>");
 		}
            });
        }());
  
- 
-       $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
      });
     }
  }

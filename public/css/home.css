@@ -25,11 +25,11 @@ body {
 }
 
 .mobile-button {
+    margin-left: 1em!important;
     height: 100%;
     font-size: 10px;
     line-height: 20px;
     padding: 10px 20px!important;
-    margin: 0 3em;
 }
 
 #sidebar-container {
@@ -52,6 +52,7 @@ body {
 }
 
 #map-container {
+    right: 0;
     padding: 0;
     z-index: 5;
     position: absolute;
