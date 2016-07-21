@@ -94,21 +94,6 @@
 
 
 
-     // store current location
-
-     // Create second drop down of locations
-
-     var items = [];
-     $.each(locations, function (i) {
-         items.push('<li class="location-li"><a>' + locations[i][0] + '</a></li>');
-     }); // close each()
-     $('#dropdown2').append(items.join(''));
-
-     $(".location-li").click(function () {
-         var text = $(this).text();
-         endPosition = text;
-         $('#destination').text(endPosition);
-     });
 
 
 
@@ -116,6 +101,7 @@
 
      var infowindow = new google.maps.InfoWindow();
      var marker, i;
+     
 
      for (i = 0; i < locations.length; i++) {
          marker = new google.maps.Marker({
@@ -131,7 +117,8 @@
          })(marker, i));
      }
 
-     var shortestPaths = []
+     var shortestPaths = [];
+     var rankedLocations = locations;
      var ionaLatLong;
 
      navigator.geolocation.getCurrentPosition(function (p) {
@@ -143,6 +130,14 @@
              var distance = Math.round((google.maps.geometry.spherical.computeDistanceBetween(latLngA, ionaLatLong) / 1000) * 10) / 10;
              shortestPaths[i] = distance;
          }
+         
+         
+         for (i = 0; i < locations.length; i++) {
+          rankedLocations[i].distance = shortestPaths[i];
+         }
+         rankedLocations.sort(function(a, b) {
+           return a.distance - b.distance;
+         });
 
          var rows = 7,
              cols = 2;
@@ -152,11 +147,24 @@
              for (var j = 0; j < cols; j++) {
                  $('table').find('tr').eq(i).append('<td></td>');
                  $('table').find('tr').eq(i).find('td').eq(j).attr('data-row', i).attr('data-col', j);
-                 $('table').find('tr').eq(i).find('td').eq(0).text(locations[i][0]);
-                 $('table').find('tr').eq(i).find('td').eq(1).text(shortestPaths[i] + " km away");
-
+                 $('table').find('tr').eq(i).find('td').eq(0).text(rankedLocations[i][0]);
+                 $('table').find('tr').eq(i).find('td').eq(1).text(rankedLocations[i].distance + " km away");
              }
          }
+
+         // Create second drop down of locations
+    
+         var items = [];
+         $.each(locations, function (i) {
+             items.push('<li class="location-li"><a>' + rankedLocations[i][0] + '</a></li>');
+         }); // close each()
+         $('#dropdown2').append(items.join(''));
+    
+         $(".location-li").click(function () {
+             var text = $(this).text();
+             endPosition = text;
+             $('#destination').text(endPosition);
+         });
 
      });
  }
