@@ -42,7 +42,7 @@
  var currentPositionInfoWindow;
  
  //JS Event Handlers
- $('#chooseDestination').on('touchstart click', function(){ 
+ $('#dropdown2').on('touchstart click', function(){ 
     calculateLocation();
  });
 
