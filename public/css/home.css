@@ -55,7 +55,6 @@ body {
 #map-container {
     right: 0;
     padding: 0;
-    z-index: 5;
     position: absolute;
 }
 
