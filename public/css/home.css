@@ -4,20 +4,39 @@ html {
 
 body {
     height: 100%;
-    background-color: aliceblue
+    background-color: white
+    color: #545454;
 }
 
-#main-content {
-    min-height: 90%;
+/*Hide Google Directions Warning and Copyright*/
+.adp-warnbox, .adp-legal, .adp-summary {
+	display:none;
+}
+
+.adp-placemark {
+	background-color: white!important;
+	border: none!important;
+}
+
+#data-table {
+    overflow-y: scroll;
+    display: block;
+    height: inherit;
+    position: absolute;
+}
+
+.mobile-button {
+    margin-left: 1em!important;
+    height: 100%;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 10px 20px!important;
 }
 
 #sidebar-container {
-    height: 93vh;
-    background-color: aliceblue
-}
-
-#bus-container {
-    height: 50%;
+    background-color: white;
+    position: absolute!important;
+    z-index: 100;
 }
 
 #safe-walk-container {
@@ -30,8 +49,13 @@ body {
 }
 
 #map {
-    right: ;
     height: 93vh;
+}
+
+#map-container {
+    right: 0;
+    padding: 0;
+    position: absolute;
 }
 
 #container-1-headline {
@@ -44,4 +68,42 @@ body {
 
 #destination-header {
     font-size: 18px;
+}
+
+#directionsPanel {
+    width:100%;
+    height:100%;
+}
+
+ul.collapsible{
+    margin-bottom: 0;
+    z-index: 5;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: white;
+}
+
+#endPosition {
+	font-size: 1em;
+	font-weight: 300;
+	color: gray;
+	line-height:1.5;
+}
+
+.collapsible-header #endPosition > #shortDescription {
+        display: none;
+}
+.collapsible-header.active #endPosition > #shortDescription {
+	display: block;
+}
+.collapsible-header.active #endPosition > #longDescription {
+        display: none;
+}
+
+
+#walking-icon-img {
+    width: 1.5em;
+    height: auto;
+    margin: 1em 0 0 4em;
 }

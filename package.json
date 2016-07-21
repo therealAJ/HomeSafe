@@ -18,13 +18,8 @@
   },
   "homepage": "https://github.com/therealAJ/HomeSafe#readme",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "jsonwebtoken": "^5.7.0",
-    "mongoose": "^4.4.10",
-    "morgan": "^1.7.0",
-    "nodemailer": "^2.3.2",
-    "nodemailer-mailgun-transport": "^1.0.1"
+    "morgan": "^1.7.0"
   }
 }

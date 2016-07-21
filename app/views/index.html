@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>UBC SafeWalk Directions</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./../../css/materialize.min.css" media="screen,projection" />
+
+    <!--Import main.css-->
+    <link type="text/css" rel="stylesheet" href="./../../css/home.css" />
+
+    <!--GOOGLE FONTS-->
+    <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    <script type="text/javascript">
+  !function(name,path,ctx){
+    var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+  }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.0.3.min.js',this);
+
+  KeenAsync.ready(function(){
+    // Configure a client instance
+    var client = new KeenAsync({
+      projectId: '579092bebcb79c50b07b54b9',
+      writeKey: 'ecdd4fa6047c2ed1db00f415f47f8ace81cc55d5c50afa47cce0ff0d4148c0bd3df396cfbfacf354bf8b91bd4e7c05920b9602fe45e372d4e30e10b78040bdee60419b7e9d697495f5fa8e4ca9fb43e8e8adf2c23c5f4ca41a6804ae2122145d'
+    });
+
+    // Record an event
+    client.recordEvent('pageviews', {
+      title: document.title
+    });
+  });
+</script>
+</head>
+
+<body>
+
+<script type="text/javascript" src="./../../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="./../../js/materialize.min.js"></script>
+<script type="text/javascript" src="./../../js/moment.js"></script>
+<script type="text/javascript" src="./../../js/home.js"></script>
+
+
+<nav class="blue-grey darken-1">
+    <div class="nav-wrapper">
+        <a href="/" id="nav-icon" class="brand-logo">  UBC SafeWalk Directions </a>
+    </div>
+</nav>
+
+
+
+<div id="main-content" class="row">
+
+    <div id="sidebar-container" class="col s12 m4 l4">
+
+        <div id="bus-container">
+            <h5 id="container-1-headline" class="center">Get me home safe!</h5>
+
+            <!-- TABS-->
+
+            <div class="row">
+                <div class="col s12 center">
+                    <!--to drop-down-->
+                    <a class='hide-on-med-and-up dropdown-button btn mobile-button col s6' 
+                        href='#' data-activates='dropdown2'>
+                        Choose Destination
+                    </a>
+                    <a href="tel:604-822-5355"
+			class="waves-effect waves-red btn red hide-on-med-and-up mobile-button col s5">
+                        Call Safewalk
+                    </a>
+                    
+                    <a class='hide-on-small-only dropdown-button btn' href='#' data-activates='dropdown2'>Choose Destination</a>
+                    <ul class='dropdown-content' id="dropdown2">
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DESTINATION -->
+            <div style="margin-bottom:3em;" class="hide-on-small-only">
+                <div class="row center">
+                    <!--<h6 id="destination-header" class="center default-text">Current Destination:</h6>
+                    <span id="destination" class="input-field col s12 center default-text">
+                    </span>
+                    -->
+                    <a href="tel:604-822-5355"
+                        class="waves-effect waves-red btn red">
+                        Call Safewalk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="safe-walk-container" class="hide-on-small-only">
+            <h5 class="center default-text">Nearby SafeWalk HUBs</h5>
+
+            <table class="default-text" id="data-table">
+            </table>
+        </div>
+    </div>
+    <div id="map-container" class="col s12 m8 l8">
+        <div id="map"></div>
+        <ul class="collapsible" data-collapsible="accordion" style="z-index:1000;">
+            <li>
+              <div class="collapsible-header" id="directionsHeader"></div>
+              <div class="collapsible-body" id="directionsPanel"></div>
+            </li>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwLM2Ko-o0JYBgFOE6XUV8J1WS7ub5jC4&callback=initMap&libraries=geometry" async defer></script>
+
+</body>
+
+
+</html>
