@@ -8,19 +8,22 @@ body {
     color: #545454;
 }
 
-#data_table {
+#data-table {
     overflow-y: scroll;
     display: block;
     height: inherit;
 }
 
-#sidebar-container {
-    height: 93vh;
-    background-color: white
+.mobile-button {
+    height: 100%;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 10px 20px;
+    margin: 0 3em;
 }
 
-#bus-container {
-    /*height: 50%;*/
+#sidebar-container {
+    background-color: white
 }
 
 #safe-walk-container {
