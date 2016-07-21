@@ -1,0 +1,7 @@
+{
+  "name": "UBC SafeWalk",
+  "description": "A MEAN-stack application allowing UBC students to find SafeWalk HUB locations easily and get home safely",
+  "repository": "https://github.com/whitef0x0/HomeSafe",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
