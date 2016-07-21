@@ -9,9 +9,21 @@
 
 ![alt tag](https://raw.githubusercontent.com/therealAJ/HomeSafe/master/Animation.gif)
 
-##Installation and Usage
+##Quick Start
 
-To install and run, download repository and run it by using the command, ```node server.js``` in the directory where server.js is located at.
+**This quick start guide assumes you have node/npm and mongodb installed and running**
+First clone/download repository.
+
+Then create your `config.js` file. It should follow this template,
+```js
+  module.exports = {
+    database: 'your_mongodb_uri/database',
+    secret: 'your_secret_key',
+    port: 3000,
+  }
+```
+
+Then run ```$node server.js``` and your app should be running at 127.0.0.1:3000
 
 ##Technologies Used
 **Frontend:** HTML5, CSS3, AngularJS, JavaScript
