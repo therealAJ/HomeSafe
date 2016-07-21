@@ -145,7 +145,7 @@
                  $('table').find('tr').eq(i).append('<td></td>');
                  $('table').find('tr').eq(i).find('td').eq(j).attr('data-row', i).attr('data-col', j);
                  $('table').find('tr').eq(i).find('td').eq(0).text(rankedLocations[i][0]);
-                 $('table').find('tr').eq(i).find('td').eq(1).text(rankedLocations[i].distance + " km away");
+                 $('table').find('tr').eq(i).find('td').eq(1).html("<b>"+rankedLocations[i].distance + " km away </b>");
              }
          }
 

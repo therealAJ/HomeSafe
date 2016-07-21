@@ -22,6 +22,7 @@ body {
     overflow-y: scroll;
     display: block;
     height: inherit;
+    position: absolute;
 }
 
 .mobile-button {
