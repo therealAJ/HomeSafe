@@ -41,12 +41,7 @@
  var currentPosition;
  var currentPositionInfoWindow;
  
- //JS Event Handlers
- $('#dropdown2 > li').on('click', function(){ 
-    event.stopPropagation();
-    event.preventDefault();
-    calculateLocation();
- });
+
 
  function initMap() {
 
@@ -161,11 +156,19 @@
          }); // close each()
          $('#dropdown2').append(items.join(''));
     
-         $(".location-li").click(function () {
-             var text = $(this).text();
-             endPosition = text;
-             $('#destination').text(endPosition);
-         });
+        //JS Event Handlers
+        $('#dropdown2 > .location-li').on('touchend click mouseup', function(){ 
+            event.stopPropagation();
+            event.preventDefault();
+            calculateLocation();
+            
+            var text = $(this).text();
+            endPosition = text;
+            $('#destination').text(endPosition);
+        });
+         /*$(".location-li").click(function () {
+             
+         });*/
 
      });
  }
