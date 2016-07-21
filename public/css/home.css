@@ -14,10 +14,6 @@ body {
     height: inherit;
 }
 
-#main-content {
-    min-height: 90%;
-}
-
 #sidebar-container {
     height: 93vh;
     background-color: white
