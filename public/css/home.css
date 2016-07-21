@@ -103,7 +103,7 @@ ul.collapsible{
 
 
 #walking-icon-img {
-	width: inherit;
-    height: 100%;
+    width: 1.5em;
+    height: auto;
     margin: 1em 0 0 4em;
 }
