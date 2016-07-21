@@ -215,6 +215,6 @@
 
  function resetDirectionRender() {
      $(directionsPanel).empty();
-     directionsDisplay.setMap(null);
+     if(directionsDisplay) directionsDisplay.setMap(null);
      $('#directions-below').empty();
  }
