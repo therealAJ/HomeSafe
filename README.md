@@ -6,7 +6,7 @@
 
 ##Screenshots
 
-<img width="500px" src="https://raw.githubusercontent.com/whitef0x0/HomeSafe/master/design/screenshots/screenshot_desktop.png">
+<img width="700px" src="https://raw.githubusercontent.com/whitef0x0/HomeSafe/master/design/screenshots/screenshot_desktop.png">
 <img width="250px" src="https://raw.githubusercontent.com/whitef0x0/HomeSafe/master/design/screenshots/screenshot_mobile1.png">
 <img width="250px" src="https://raw.githubusercontent.com/whitef0x0/HomeSafe/master/design/screenshots/screenshot_mobile2.png">
 
