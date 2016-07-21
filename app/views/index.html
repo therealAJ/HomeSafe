@@ -62,7 +62,7 @@
 
 <div id="main-content" class="row">
 
-    <div id="sidebar-container" class="col s4 m4 l4">
+    <div id="sidebar-container" class="col s12 m4 l4">
 
         <div id="bus-container">
             <h5 id="container-1-headline" class="center">Get me home safe!</h5>
@@ -72,43 +72,45 @@
             <div class="row">
                 <div class="col s12 center">
                     <!--to drop-down-->
-                    <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Choose Destination</a>
+                    <a class='hide-on-med-and-up dropdown-button btn mobile-button' 
+                        href='#' data-activates='dropdown2'>
+                        Destination
+                    </a>
+                    <a href="tel:604-822-5355"
+                        class="waves-effect waves-red btn red hide-on-med-and-up mobile-button">
+                        Call Safewalk
+                    </a>
+                    
+                    <a class='hide-on-small-only dropdown-button btn' href='#' data-activates='dropdown2'>Choose Destination</a>
                     <ul id='dropdown2' class='dropdown-content' onClick="calculateLocation()">
-
                     </ul>
                 </div>
             </div>
 
             <!-- DESTINATION -->
-            <div>
+            <div style="margin-bottom:3em;">
                 <div class="row center">
                     <h6 id="destination-header" class="center default-text">Current Destination:</h6>
                     <div id="destination" class="input-field col s12 center default-text">
                     </div>
-                    <br><br>
-                    <a href="tel:604-822-5355"class="waves-effect waves-red btn red">Call Safewalk</a>
+                    
+                    <a href="tel:604-822-5355"
+                        class="waves-effect waves-red btn red hide-on-small-only">
+                        Call Safewalk
+                    </a>
                 </div>
             </div>
-            <br><br>
             <h6 class="center default-text" id="directions-below"></h6>
-
-
         </div>
 
-        <div id="safe-walk-container">
+        <div id="safe-walk-container hide-on-small-only">
             <h5 class="center default-text">Nearby SafeWalk HUBs</h5>
 
-
-
-            <table class="default-text" id="data_table">
-
+            <table class="default-text" id="data-table">
             </table>
-
-
-
         </div>
     </div>
-    <div id="map-container" class="col s8 m8 l8">
+    <div id="map-container" class="col s12 m8 l8">
         <div id="map"></div>
     </div>
 
