@@ -42,7 +42,7 @@
  var currentPositionInfoWindow;
  
  //JS Event Handlers
- $('#dropdown2 > li').on('touchend touchmove touchstart mouseup', function(){ 
+ $('#dropdown2 > li').on('click', function(){ 
     event.stopPropagation();
     event.preventDefault();
     calculateLocation();
