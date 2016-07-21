@@ -170,21 +170,6 @@
  }
 
 
- function storeStartLocation() {
-
-     
-
-         });
-     }
-
-     // Open Current Location Marker
-
-
-
- }
-
-
-
  function calculateLocation() {
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function (position) {
