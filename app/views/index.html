@@ -47,6 +47,7 @@
 
 <script type="text/javascript" src="./../../js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="./../../js/materialize.min.js"></script>
+<script type="text/javascript" src="./../../js/moment.js"></script>
 <script type="text/javascript" src="./../../js/home.js"></script>
 
 
@@ -88,19 +89,19 @@
             </div>
 
             <!-- DESTINATION -->
-            <div style="margin-bottom:3em;">
+            <div style="margin-bottom:3em;" class="hide-on-small-only">
                 <div class="row center">
                     <h6 id="destination-header" class="center default-text">Current Destination:</h6>
                     <div id="destination" class="input-field col s12 center default-text">
                     </div>
                     
                     <a href="tel:604-822-5355"
-                        class="waves-effect waves-red btn red hide-on-small-only">
+                        class="waves-effect waves-red btn red">
                         Call Safewalk
                     </a>
                 </div>
             </div>
-            <h6 class="center default-text" id="directions-below"></h6>
+            <h6 class="center default-text hide-on-small-only" id="directions-below"></h6>
         </div>
 
         <div id="safe-walk-container" class="hide-on-small-only">
@@ -119,8 +120,6 @@
             </li>
         </div>
     </div>
-
-    <div id="directionsPanel"></div>
 
 </div>
 

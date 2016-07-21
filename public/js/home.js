@@ -50,7 +50,8 @@
              lat: 49.263,
              lng: -123.249
          },
-         zoom: 15
+         zoom: 15,
+	 disableDefaultUI: true
      });
 
      // Get user location and place marker on map, open infowindow
@@ -172,7 +173,9 @@
 
  function calculateLocation() {
      resetDirectionRender();
+     
      if (navigator.geolocation) {
+         google.maps.event.trigger(map, 'resize')
          navigator.geolocation.getCurrentPosition(function (position) {
 
          currentPositionLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -195,11 +198,6 @@
        directionsDisplay.setMap(map);
        directionsDisplay.setPanel(document.getElementById("directionsPanel"));
        
-       var totalDistance = computeTotalDistance(directionsDisplay.getDirections());
-       var totalDuration = computeTotalDuration(directionsDisplay.getDirections());
-       
-       $('#directionsHeader').append("<div class='row'> <h3 class='col s12'>"+ totalDistance +" seconds ("+ totalDistance + " km) </h3> </div>");
-  
        (function calcRoute() {
            var request = {
                origin: currentPositionLatLng,
@@ -209,16 +207,41 @@
            directionsService.route(request, function (response, status) {
                if (status == google.maps.DirectionsStatus.OK) {
                    directionsDisplay.setDirections(response);
-               }
+                   var totalDistance = computeTotalDistance(directionsDisplay.getDirections());
+       		   var totalDuration = formatTime(computeTotalDuration(directionsDisplay.getDirections()));
+
+       		   $('#directionsHeader').append("<div class='row'> <h5 class='col s12'>"+ totalDuration +" ("+ totalDistance + " km) </h5> <p class='col s9' id='endPosition'><span id='longDescription'>Click here for directions to</span> <span id='shortDescription'>Directions to</span> <b>" + endPosition + "</b> </p> <div class='col s3' id='walking-icon-wrapper'><img id='walking-icon-img' src='/img/walking-icon.png' style='width:inherit'></div> </div>");
+		}
            });
        }());
-  
+ 
+ 
        $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
      });
     }
  }
 
 //Utility Functions
+
+function formatTime(timeSeconds){
+	var duration = moment.duration(1000*timeSeconds);
+	var formattedString = "";
+	if(duration.hours() == 1){
+		formattedString += duration.hours() + " hour ";
+	}else if(duration.hours() > 1){
+		formattedString += duration.hours() + " hours ";
+	}
+	
+	if(duration.minutes()){
+		formattedString += duration.minutes() + " min ";
+		
+		if(!duration.hours()){
+			formattedString += duration.seconds() + " sec";
+		}
+	}
+	
+	return formattedString;
+}
 
 function computeTotalDistance(result) {
   var total = 0;
