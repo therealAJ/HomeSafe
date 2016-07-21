@@ -8,6 +8,12 @@ body {
     color: #545454;
 }
 
+#data-table {
+    overflow-y: scroll;
+    display: block;
+    height: inherit;
+}
+
 #main-content {
     min-height: 90%;
 }
@@ -18,7 +24,7 @@ body {
 }
 
 #bus-container {
-    height: 50%;
+    /*height: 50%;*/
 }
 
 #safe-walk-container {
