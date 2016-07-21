@@ -112,6 +112,12 @@
     </div>
     <div id="map-container" class="col s12 m8 l8">
         <div id="map"></div>
+        <ul class="collapsible" data-collapsible="accordion" style="z-index:1000;">
+            <li>
+              <div class="collapsible-header" id="directionsHeader"></div>
+              <div class="collapsible-body" id="directionsPanel"></div>
+            </li>
+        </div>
     </div>
 
     <div id="directionsPanel"></div>
@@ -119,7 +125,6 @@
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwLM2Ko-o0JYBgFOE6XUV8J1WS7ub5jC4&callback=initMap&libraries=geometry" async defer></script>
-<!--    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>-->
 
 </body>
 
