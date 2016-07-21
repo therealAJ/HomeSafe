@@ -171,6 +171,7 @@
 
 
  function calculateLocation() {
+     resetDirectionRender();
      if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function (position) {
 
