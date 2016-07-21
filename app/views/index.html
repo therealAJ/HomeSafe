@@ -52,8 +52,11 @@
 
             <div class="row">
                 <div class="col s6 center">
-                    <!--from drop-down-->
-                    <a class='btn' onclick="storeStartLocation()">From My location</a>
+                   <!--from drop-down-->
+                        <a class='dropdown-button btn' href='#' data-activates='dropdown1'>FROM</a>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!" onclick="storeStartLocation()">My location</a></li>
+                        </ul>
                 </div>
                 <div class="col s6 center">
                     <!--to drop-down-->
