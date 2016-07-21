@@ -209,6 +209,7 @@
   
        $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
      });
+    }
  }
 
  function resetDirectionRender() {
