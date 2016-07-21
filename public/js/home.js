@@ -264,5 +264,9 @@ function computeTotalDuration(result) {
  function resetDirectionRender() {
      $(directionsPanel).empty();
      if(directionsDisplay) directionsDisplay.setMap(null);
+     directionsDisplay = null;
      $('#directions-below').empty();
+     currentPositionLatLng = null;
+     endPositionLatLng = null;
+     endPosition = null;
  }
