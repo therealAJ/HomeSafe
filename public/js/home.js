@@ -172,55 +172,58 @@
 
  function storeStartLocation() {
 
-     if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(function (position) {
-
-             currentPositionLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-             console.log(currentPositionLatLng);
+     
 
          });
      }
 
      // Open Current Location Marker
 
-     currentPositionInfoWindow.open(map, currentPosition);
-     currentPositionInfoWindow.setContent("You are here");
+
 
  }
 
 
 
  function calculateLocation() {
-     storeStartLocation();
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
 
-     for (var i = 0; i < locations.length; i++) {
-         if (endPosition == locations[i][0]) {
+         currentPositionLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-             endPositionLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
-         }
-     }
+         console.log(currentPositionLatLng);
+         
+         currentPositionInfoWindow.open(map, currentPosition);
+         currentPositionInfoWindow.setContent("You are here");
 
-     var directionsService = new google.maps.DirectionsService();
-
-     directionsDisplay = new google.maps.DirectionsRenderer();
-     directionsDisplay.setMap(map);
-     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
-
-     (function calcRoute() {
-         var request = {
-             origin: currentPositionLatLng,
-             destination: endPositionLatLng,
-             travelMode: google.maps.TravelMode.WALKING
-         };
-         directionsService.route(request, function (response, status) {
-             if (status == google.maps.DirectionsStatus.OK) {
-                 directionsDisplay.setDirections(response);
-             }
-         });
-     }());
-
-     $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
+       for (var i = 0; i < locations.length; i++) {
+           if (endPosition == locations[i][0]) {
+  
+               endPositionLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
+           }
+       }
+  
+       var directionsService = new google.maps.DirectionsService();
+  
+       directionsDisplay = new google.maps.DirectionsRenderer();
+       directionsDisplay.setMap(map);
+       directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+  
+       (function calcRoute() {
+           var request = {
+               origin: currentPositionLatLng,
+               destination: endPositionLatLng,
+               travelMode: google.maps.TravelMode.WALKING
+           };
+           directionsService.route(request, function (response, status) {
+               if (status == google.maps.DirectionsStatus.OK) {
+                   directionsDisplay.setDirections(response);
+               }
+           });
+       }());
+  
+       $('#directions-below').text("Scroll down to see directions to SafeWalk Location");
+     });
  }
 
  function resetDirectionRender() {
