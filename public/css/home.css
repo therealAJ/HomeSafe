@@ -4,7 +4,7 @@ html {
 
 body {
     height: 100%;
-    background-color: aliceblue
+    background-color: white
 }
 
 #main-content {
@@ -13,7 +13,7 @@ body {
 
 #sidebar-container {
     height: 93vh;
-    background-color: aliceblue
+    background-color: white
 }
 
 #bus-container {
