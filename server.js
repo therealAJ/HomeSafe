@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var config = require('./config.js');
 
 var app = express();
 
@@ -16,10 +15,10 @@ app.get('/', function (req, res) {
 });
 
 var port = 3000 || process.env.PORT;
-app.listen(process.ENV, function (err) {
+app.listen(port, function (err) {
     if (err) {
         console.log(err);
     } else {
-        console.log("Listening on port " + config.port);
+        console.log("Listening on port " + port);
     }
 });
