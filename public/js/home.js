@@ -40,7 +40,11 @@
 
  var currentPosition;
  var currentPositionInfoWindow;
-
+ 
+ //JS Event Handlers
+ $('#chooseDestination').on('touchstart click', function(){ 
+    calculateLocation();
+ });
 
  function initMap() {
 
